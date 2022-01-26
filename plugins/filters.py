@@ -13,7 +13,7 @@ from utils import get_file_id, parser, split_quotes
 from info import ADMINS
 
 
-@Client.on_message(filters.command(['filter', 'add']) & filters.incoming)
+@Client.on_message(filters.command(['filter', 'add']) & filters.incoming & filters.user(ADMINS))
 async def addfilter(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
@@ -116,7 +116,7 @@ async def addfilter(client, message):
     )
 
 
-@Client.on_message(filters.command(['viewfilters', 'filters']) & filters.incoming)
+@Client.on_message(filters.command(['viewfilters', 'filters']) & filters.incoming & filters.user(ADMINS))
 async def get_all(client, message):
     
     chat_type = message.chat.type
@@ -180,7 +180,7 @@ async def get_all(client, message):
         parse_mode="md"
     )
         
-@Client.on_message(filters.command('del') & filters.incoming)
+@Client.on_message(filters.command('del') & filters.incoming & filters.user(ADMINS))
 async def deletefilter(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
@@ -231,7 +231,7 @@ async def deletefilter(client, message):
     await delete_filter(message, query, grp_id)
         
 
-@Client.on_message(filters.command('delall') & filters.incoming)
+@Client.on_message(filters.command('delall') & filters.incoming & filters.user(ADMINS))
 async def delallconfirm(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
