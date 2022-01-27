@@ -609,10 +609,8 @@ async def auto_filter(client, msg, spoll=False):
             search = message.text
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:
-                if settings["spell_check"]:
-                    return await advantage_spell_chok(msg)
-                else:
-                    return
+                await msg.reply_text(Script.MALAYALAMSPELL_TXT)
+                return
         else:
             return
     else:
@@ -620,7 +618,7 @@ async def auto_filter(client, msg, spoll=False):
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
     pre = 'filep' if settings['file_secure'] else 'file'
-    button.insert([InlineKeyboardButton("ɪɴꜰᴏ", "callback1"), InlineKeyboardButton("ᴍᴏᴠɪᴇ", "callback2"), InlineKeyboardButton("sᴇʀɪᴇs", "callback3")])
+    btn.insert([InlineKeyboardButton("ɪɴꜰᴏ", "callback1"), InlineKeyboardButton("ᴍᴏᴠɪᴇ", "callback2"), InlineKeyboardButton("sᴇʀɪᴇs", "callback3")])
     for file in files:
         btn = ([InlineKeyboardButton(text=f"▫ {get_size(file.file_size)} ▸ {file.file_name}", callback_data=f'files#{file.file_id}')])
 
