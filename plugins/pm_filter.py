@@ -609,7 +609,7 @@ async def auto_filter(client, msg, spoll=False):
             search = message.text
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:
-                await msg.reply_text(Script.MALAYALAMSPELL_TXT)
+                await msg.reply_text(script.MALAYALAMSPELL_TXT)
                 return
         else:
             return
