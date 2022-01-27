@@ -59,7 +59,7 @@ async def next_page(bot, query):
 
     if not files:
         return
-        btn.append([InlineKeyboardButton("ɪɴꜰᴏ", "callback1"), InlineKeyboardButton("ᴍᴏᴠɪᴇ", "callback2"), InlineKeyboardButton("sᴇʀɪᴇs", "callback3")]]
+        btn.insert([InlineKeyboardButton("ɪɴꜰᴏ", "callback1"), InlineKeyboardButton("ᴍᴏᴠɪᴇ", "callback2"), InlineKeyboardButton("sᴇʀɪᴇs", "callback3")])
     for file in files:
         btn = ([InlineKeyboardButton(text=f"▫ {get_size(file.file_size)} ▸ {file.file_name}", callback_data=f'files#{file.file_id}')])
 
@@ -620,7 +620,7 @@ async def auto_filter(client, msg, spoll=False):
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
     pre = 'filep' if settings['file_secure'] else 'file'
-    btn.append([InlineKeyboardButton("ɪɴꜰᴏ", "callback1"), InlineKeyboardButton("ᴍᴏᴠɪᴇ", "callback2"), InlineKeyboardButton("sᴇʀɪᴇs", "callback3")]]
+    btn.insert([InlineKeyboardButton("ɪɴꜰᴏ", "callback1"), InlineKeyboardButton("ᴍᴏᴠɪᴇ", "callback2"), InlineKeyboardButton("sᴇʀɪᴇs", "callback3")])
     for file in files:
         btn = ([InlineKeyboardButton(text=f"▫ {get_size(file.file_size)} ▸ {file.file_name}", callback_data=f'files#{file.file_id}')])
 
