@@ -85,8 +85,7 @@ async def start(client, message):
                         InlineKeyboardButton("Hᴇʏ Bᴏᴛ....! Wʜʏ I'ᴍ ᴊᴏɪɴɪɴɢ", callback_data="neosub")
                     ]
                 ]
-            )
-        ),
+            ),
             parse_mode="html",
             disable_web_page_preview=True
             )
