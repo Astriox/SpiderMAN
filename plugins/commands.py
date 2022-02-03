@@ -63,7 +63,7 @@ async def start(client, message):
             [
                 InlineKeyboardButton(
                     "ᴊᴏɪɴ ɢʀᴏᴜᴘ", url=invite_link.invite_link),
-                tryjust
+                {tryjust}
                 ])
         if message.command[1] != "subscribe":
             kk, file_id = message.command[1].split("_", 1)
