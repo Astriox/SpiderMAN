@@ -20,8 +20,8 @@ BATCH_FILES = {}
 
 @Client.on_message(filters.command("start") & filters.incoming & ~filters.edited)
 async def start(client, message):
-    await asyncio.sleep(5)
     await message.delete()
+    await asyncio.sleep(5)
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
             [
