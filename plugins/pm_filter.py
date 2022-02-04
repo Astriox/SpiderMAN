@@ -450,8 +450,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             pass
     elif query.data == "malspell":
         buttons = [[
-           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={search}'),
-           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f'https://yandex.com/search/?text={search}')
+           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={query}'),
+           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f'https://yandex.com/search/?text={query}')
            ],[
            InlineKeyboardButton('🇬🇧 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪsʜ 🇬🇧', callback_data='engspell')
         ]]
@@ -463,8 +463,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "malspell":
         buttons = [[
-           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={search}'),
-           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f'https://yandex.com/search/?text={search}')
+           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={query}'),
+           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f'https://yandex.com/search/?text={query}')
            ],[
            InlineKeyboardButton('🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳', callback_data='malspell')
         ]]
@@ -778,9 +778,11 @@ async def advantage_spell_chok(msg):
            ],[
            InlineKeyboardButton('🇬🇧 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪsʜ 🇬🇧', callback_data='engspell')
         ]]
-    await msg.reply(REP_TEXT.format(msg.from_user.mention),
+        m = await msg.reply(REP_TEXT.format(msg.from_user.mention),
                     reply_markup=InlineKeyboardMarkup(btn))
-
+        await asyncio.sleep(20)
+        await msg.delete()
+        await m.delete()
 
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
