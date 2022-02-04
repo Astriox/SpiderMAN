@@ -772,12 +772,11 @@ async def advantage_spell_chok(msg):
         return
     SPELL_CHECK[msg.message_id] = movielist
     btn = [[
-        InlineKeyboardButton(
-            text=movie.strip(),
-            callback_data=f"spolling#{user}#{k}",
-        )
-    ] for k, movie in enumerate(movielist)]
-    btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
+           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={search}'),
+           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f'https://yandex.com/search/?text={search}')
+           ],[
+           InlineKeyboardButton('🇬🇧 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪsʜ 🇬🇧', callback_data='engspell')
+        ]]
     await msg.reply(REP_TEXT.format(msg.from_user.mention),
                     reply_markup=InlineKeyboardMarkup(btn))
 
