@@ -779,7 +779,7 @@ async def advantage_spell_chok(msg):
            InlineKeyboardButton('🇬🇧 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪsʜ 🇬🇧', callback_data='engspell')
         ]]
         m = await msg.reply(REP_TEXT.format(msg.from_user.mention),
-                    reply_markup=InlineKeyboardMarkup(btn))
+        reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(20)
         await msg.delete()
         await m.delete()
