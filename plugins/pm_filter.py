@@ -778,11 +778,11 @@ async def advantage_spell_chok(msg):
            ],[
            InlineKeyboardButton('🇬🇧 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪsʜ 🇬🇧', callback_data='engspell')
         ]]
-        neo = await msg.reply_text(text=REP_TEXT.format(msg.from_user.mention),
+        k = await msg.reply_text(text=REP_TEXT.format(msg.from_user.mention),
         reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(20)
         await msg.delete()
-        await neo.delete()
+        await k.delete()
         return
 
 async def manual_filters(client, message, text=False):
