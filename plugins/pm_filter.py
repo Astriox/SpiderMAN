@@ -773,24 +773,14 @@ async def advantage_spell_chok(msg):
     SPELL_CHECK[msg.message_id] = movielist
     query = msg.text.replace(' ', '+')
     btn = [[
-           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={query}'),
-           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f'https://yandex.com/search/?text={query}')
+           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={search}'),
+           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f'https://yandex.com/search/?text={search}')
            ],[
            InlineKeyboardButton('🇬🇧 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪsʜ 🇬🇧', callback_data='engspell')
         ]]
-        k = await msg.reply_text(text="""
-        <b>ഹലോ {} നിങ്ങൾ ആവശ്യപ്പെട്ട ഈ സിനിമ എനിക്ക് കണ്ടെത്താൻ കഴിഞ്ഞില്ല 🥴 ...
-        
-Google, Yandex ഏതെങ്കിലും ഒരു ബട്ടണിൽ ക്ലിക്ക് ചെയ്ത് ശരിയായ സിനിമയുടെ പേര് കണ്ടെത്തി ഇവിടെ നൽകുക എന്നാലേ സിനിമ / സീരിയസ് കിട്ടുകയുള്ളു 🙂...
-        
-ശരിയായ പേര് നൽകിയിട്ടും നിങ്ങൾക്ക് സിനിമ ലഭിക്കുന്നില്ലെങ്കിൽ ...</b> <code>@admin query</code> <b>ഈ ഫോർമാറ്റിൽ അഡ്മിനെ അറിയിക്കുക .. ഞങ്ങൾ 24 മണിക്കൂറിനുള്ളിൽ അപ്‌ലോഡ് ചെയ്യും 😇</b>
-        """.format(msg.from_user.mention),
-        reply_markup=InlineKeyboardMarkup(btn))
-        await asyncio.sleep(20)
-        await msg.delete()
-        await k.delete()
-        return
-
+    await msg.reply(REP_TEXT.format(msg.from_user.mention),
+                    reply_markup=InlineKeyboardMarkup(btn))
+    return
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
     name = text or message.text
