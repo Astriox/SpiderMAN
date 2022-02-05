@@ -778,11 +778,11 @@ async def advantage_spell_chok(msg):
            ],[
            InlineKeyboardButton('🇬🇧 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪsʜ 🇬🇧', callback_data='engspell')
         ]]
-        m = await msg.reply(REP_TEXT.format(msg.from_user.mention),
+        neo = await msg.reply(REP_TEXT.format(msg.from_user.mention),
         reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(20)
         await msg.delete()
-        await m.delete()
+        await neo.delete()
 
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
