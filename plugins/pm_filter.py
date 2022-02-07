@@ -451,27 +451,27 @@ async def cb_handler(client: Client, query: CallbackQuery):
             pass
     elif query.data == "malspell":
         buttons = [[
-           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={query}'),
-           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f'https://yandex.com/search/?text={query}')
+           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={neok}'),
+           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f'https://yandex.com/search/?text={neok}')
            ],[
            InlineKeyboardButton('🇬🇧 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪsʜ 🇬🇧', callback_data='engspell')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=MAL_REP.format(msg.from_user.mention),
+            text=MAL_REP.format(query.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
         )
     elif query.data == "engspell":
         buttons = [[
-           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={query}'),
-           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f'https://yandex.com/search/?text={query}')
+           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={neok}'),
+           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f'https://yandex.com/search/?text={neok}')
            ],[
            InlineKeyboardButton('🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳', callback_data='malspell')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=ENG_REP.format(msg.from_user.mention),
+            text=ENG_REP.format(query.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -772,10 +772,10 @@ async def advantage_spell_chok(msg):
         await k.delete()
         return
     SPELL_CHECK[msg.message_id] = movielist
-    query = msg.text.replace(' ', '+')
+    neok = msg.text.replace(' ', '+')
     btn = [[
-           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={query}'),
-           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f'https://yandex.com/search/?text={query}')
+           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={neok}'),
+           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f'https://yandex.com/search/?text={neok}')
            ],[
            InlineKeyboardButton('🇬🇧 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪsʜ 🇬🇧', callback_data='engspell')
         ]]
