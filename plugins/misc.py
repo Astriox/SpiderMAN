@@ -127,7 +127,14 @@ async def who_is(client, message):
         )
     await status_message.delete()
 
-@Client.on_message(filters.command(["report"]) | filters.regex("@admins") | filters.regex("@admin") & filters.group))
+@Client.on_message(
+    (
+        filters.command(["report"]) |
+        filters.regex("@admins") |
+        filters.regex("@admin")
+    ) &
+    filters.group
+)
 async def report(bot, message):
     if message.reply_to_message:
         chat_id = message.chat.id
