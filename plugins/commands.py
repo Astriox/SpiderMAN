@@ -2,6 +2,7 @@ import os
 import logging
 import random
 import asyncio
+from os import environ
 from Script import script
 from pyrogram import Client, filters
 from pyrogram.errors import ChatAdminRequired, FloodWait
@@ -17,7 +18,7 @@ import base64
 logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
-ADMIN = ADMINS
+ADMIN = int(os.environ.get("1908563535"))
 
 @Client.on_message(filters.command("start") & filters.incoming & ~filters.edited)
 async def start(client, message):
