@@ -450,7 +450,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except:
             pass
     elif query.data == "malspell":
-        neok = query.text.replace(' ', '+')
+        neok = query.message.text.replace(' ', '+')
         buttons = [[
            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={neok}'),
            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f'https://yandex.com/search/?text={neok}')
@@ -464,7 +464,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
     elif query.data == "engspell":
-        neok = query.text.replace(' ', '+')
+        neok = query.message.text.replace(' ', '+')
         buttons = [[
            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={neok}'),
            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f'https://yandex.com/search/?text={neok}')
