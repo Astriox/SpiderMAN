@@ -138,7 +138,7 @@ async def advantage_spoll_choker(bot, query):
 
 
 @Client.on_callback_query()
-async def cb_handler(client: Client, query: CallbackQuery):
+async def cb_handler(client: Client, query: CallbackQuery, message):
     if query.data == "close_data":
         await query.message.delete()
     elif query.data == "delallconfirm":
@@ -451,8 +451,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             pass
     elif query.data == "malspell":
         buttons = [[
-           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://google.com/search?q={msg.text.replace(' ', '+')}"),
-           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f"https://yandex.com/search/?text={msg.text.replace(' ', '+')}")
+           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://google.com/search?q={message.text.replace(' ', '+')}"),
+           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f"https://yandex.com/search/?text={message.text.replace(' ', '+')}")
            ],[
            InlineKeyboardButton('🇬🇧 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪsʜ 🇬🇧', callback_data='engspell')
         ]]
@@ -464,8 +464,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "engspell":
         buttons = [[
-           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://google.com/search?q={msg.text.replace(' ', '+')}"),
-           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f"https://yandex.com/search/?text={msg.text.replace(' ', '+')}")
+           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://google.com/search?q={message.text.replace(' ', '+')}"),
+           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f"https://yandex.com/search/?text={message.text.replace(' ', '+')}")
            ],[
            InlineKeyboardButton('🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳', callback_data='malspell')
         ]]
