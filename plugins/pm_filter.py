@@ -138,13 +138,13 @@ async def advantage_spoll_choker(bot, query):
 
 @Client.on_callback_query(filters.regex('^engspell'))
 async def engspell(c, m):
-    buttons = [[
+    button = [[
            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://google.com/search?q={m.text.replace(' ', '+')}"),
            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f"https://yandex.com/search/?text={m.text.replace(' ', '+')}")
            ],[
            InlineKeyboardButton('🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳', callback_data='malspell')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
+        reply_markup = InlineKeyboardMarkup(button)
         await m.message.edit_text(
             text=ENG_REP.format(m.from_user.mention),
             reply_markup=reply_markup,
