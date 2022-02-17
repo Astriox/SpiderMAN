@@ -462,32 +462,32 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.reply_to_message.delete()
         except:
             pass
-    elif query.data == "malspell":
-        buttons = [[
-           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://google.com/search?q={message.text.replace(' ', '+')}"),
-           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f"https://yandex.com/search/?text={message.text.replace(' ', '+')}")
-           ],[
-           InlineKeyboardButton('🇬🇧 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪsʜ 🇬🇧', callback_data='engspell')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=MAL_REP.format(query.from_user.mention),
-            reply_markup=reply_markup,
-            parse_mode='html'
+   # elif query.data == "malspell":
+        #buttons = [[
+          # InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://google.com/search?q={message.text.replace(' ', '+')}"),
+           #InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f"https://yandex.com/search/?text={message.text.replace(' ', '+')}")
+          # ],[
+          # InlineKeyboardButton('🇬🇧 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪsʜ 🇬🇧', callback_data='engspell')
+       # ]]
+       # reply_markup = InlineKeyboardMarkup(buttons)
+      #  await query.message.edit_text(
+           # text=MAL_REP.format(query.from_user.mention),
+         #   reply_markup=reply_markup,
+            #parse_mode='html'
         )
-    elif query.data == "engspell":
-        buttons = [[
-           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://google.com/search?q={message.text.replace(' ', '+')}"),
-           InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f"https://yandex.com/search/?text={message.text.replace(' ', '+')}")
-           ],[
-           InlineKeyboardButton('🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳', callback_data='malspell')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=ENG_REP.format(query.from_user.mention),
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
+  #  elif query.data == "engspell":
+      #  buttons = [[
+        #   InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://google.com/search?q={message.text.replace(' ', '+')}"),
+          # InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f"https://yandex.com/search/?text={message.text.replace(' ', '+')}")
+           #],[
+           #InlineKeyboardButton('🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳', callback_data='malspell')
+        #]]
+       # reply_markup = InlineKeyboardMarkup(buttons)
+       # await query.message.edit_text(
+         #   text=ENG_REP.format(query.from_user.mention),
+           # reply_markup=reply_markup,
+           # parse_mode='html'
+       # )
     elif query.data == "button":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 Back', callback_data='manuelfilter')
