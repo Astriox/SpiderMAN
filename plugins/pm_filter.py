@@ -37,7 +37,7 @@ async def give_filter(client, message):
     if k == False:
         await auto_filter(client, message)
 
-@Client.on_callback_query(filters.regex("malspell"))
+@Client.on_callback_query(filters.regex(r"^malspell"))
 async def close_dta(bot, query):
     buttons = [[
            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://google.com/search?q={query.message.text.replace(' ', '+')}"),
@@ -51,7 +51,7 @@ async def close_dta(bot, query):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-@Client.on_callback_query(filters.regex("engspell"))
+@Client.on_callback_query(filters.regex(r"^engspell"))
 async def close_dta(bot, query):
     buttons = [[
            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://google.com/search?q={query.message.text.replace(' ', '+')}"),
