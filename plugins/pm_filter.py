@@ -39,31 +39,28 @@ async def give_filter(client, message):
 
 @Client.on_callback_query(filters.regex(r"^malspell"))
 async def close_dta(bot, query):
-    buttons = [[
+    await query.message.edit_text(
+           text=MAL_REP.format(query.from_user.mention),
+           reply_markup = InlineKeyboardMarkup(
+           [[
            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://google.com/search?q={query.message.text.replace(' ', '+')}"),
            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f"https://yandex.com/search/?text={query.message.text.replace(' ', '+')}")
            ],[
            InlineKeyboardButton('🇬🇧 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪsʜ 🇬🇧', callback_data='engspell')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=MAL_REP.format(query.from_user.mention),
-            reply_markup=reply_markup,
-            parse_mode='html'
+           ]]),
+           parse_mode='html'
         )
 @Client.on_callback_query(filters.regex(r"^engspell"))
 async def close_dta(bot, query):
-    buttons = [[
+    await query.message.edit_text(
+           text=ENG_REP.format(query.from_user.mention),
+           reply_markup = InlineKeyboardMarkup([[
            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://google.com/search?q={query.message.text.replace(' ', '+')}"),
            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎',url=f"https://yandex.com/search/?text={query.message.text.replace(' ', '+')}")
            ],[
            InlineKeyboardButton('🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳', callback_data='malspell')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=ENG_REP.format(query.from_user.mention),
-            reply_markup=reply_markup,
-            parse_mode='html'
+        ]]),
+           parse_mode='html'
         )
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
