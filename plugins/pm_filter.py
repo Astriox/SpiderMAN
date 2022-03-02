@@ -803,7 +803,7 @@ async def advantage_spell_chok(msg):
            ],[
            InlineKeyboardButton('🇬🇧 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪsʜ 🇬🇧', callback_data='engspell')
         ]]
-    await msg.reply(MAL_REP.format(msg.from_user.mention),
+    await msg.reply_text(text=MAL_REP.format(msg.from_user.mention),
                     reply_markup=InlineKeyboardMarkup(btn))
     return
 async def manual_filters(client, message, text=False):
