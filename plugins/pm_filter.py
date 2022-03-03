@@ -39,7 +39,7 @@ async def give_filter(client, message):
 
 @Client.on_callback_query(filters.regex(r"^malspell"))
 async def mal_spell(bot, query):
-   await query.edit_text(
+   await query.message.edit_text(
         text=MAL_REP.format(query.from_user.mention),
         reply_markup=InlineKeyboardMarkup([[
            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://google.com/search?q={query.message.text.replace(' ', '+')}"),
@@ -51,7 +51,7 @@ async def mal_spell(bot, query):
         )
 @Client.on_callback_query(filters.regex(r"^engspell"))
 async def eng_spell(bot, query):    
-   await query.edit_text(
+   await query.message.edit_text(
         text=ENG_REP.format(query.from_user.mention),
         reply_markup=InlineKeyboardMarkup([[
             InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://google.com/search?q={query.message.text.replace(' ', '+')}"),
