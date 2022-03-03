@@ -38,8 +38,8 @@ async def give_filter(client, message):
         await auto_filter(client, message)
 
 @Client.on_callback_query(filters.regex(r"^malspell"))
-async def close_dta(bot, query):
-   await query.message.edit_text(
+async def mal_spell(bot, query):
+   await query.edit_text(
         text=MAL_REP.format(query.from_user.mention),
         reply_markup=InlineKeyboardMarkup([[
            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://google.com/search?q={query.message.text.replace(' ', '+')}"),
@@ -50,8 +50,8 @@ async def close_dta(bot, query):
         parse_mode='html'
         )
 @Client.on_callback_query(filters.regex(r"^engspell"))
-async def close_dta_2(bot, query):    
-   await query.message.edit_text(
+async def eng_spell(bot, query):    
+   await query.edit_text(
         text=ENG_REP.format(query.from_user.mention),
         reply_markup=InlineKeyboardMarkup([[
             InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://google.com/search?q={query.message.text.replace(' ', '+')}"),
