@@ -50,7 +50,7 @@ async def close_dta(bot, query):
         parse_mode='html'
         )
 @Client.on_callback_query(filters.regex(r"^engspell"))
-async def close_dta(bot, query):    
+async def close_dta_2(bot, query):    
    await query.message.edit_text(
         text=ENG_REP.format(query.from_user.mention),
         reply_markup=InlineKeyboardMarkup([[
