@@ -437,7 +437,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴏsᴇ ᴛʜɪs ʙᴜᴛᴛᴏɴs', callback_data='start'),
             ],[
             InlineKeyboardButton('ᴏᴡɴᴇʀ', callback_data='about'),
-            InlineKeyboardButton('ɢʀᴏᴜᴘ', url='https://t.me/Cinemabranthen')
+            InlineKeyboardButton('ɢʀᴏᴜᴘ', url='https://t.me/Cinimabranthen')
             ],[
             InlineKeyboardButton('ᴄʜᴀɴɴᴇʟ', url='https://t.me/OnlyLatestDrive'),
             InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close_pages')
