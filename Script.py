@@ -2,13 +2,13 @@ class script(object):
     START_TXT = """<b>Hᴇʟʟᴏ {}</b>
     
 <b>Sᴏʀʀʏ ɪ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ</b> <b><a href=https://t.me/Cinimabranthen>Cɪɴɪᴍᴀʙʀᴀɴᴛʜᴇɴ</a></b><b> Gʀᴏᴜᴘ. Nᴏ ᴏᴛʜᴇʀ ᴄᴏᴍᴍᴀɴᴅ ᴡɪʟʟ ᴡᴏʀᴋ ᴏɴ ᴛʜɪs ʙᴏᴛ ᴇxᴄᴇᴘᴛ sᴛᴀʀᴛ. ᴅᴏɴ’ᴛ ᴡᴀsᴛᴇ ʏᴏᴜʀ ᴛɪᴍᴇ</b>"""
-    OWNER_TXT = """<b>⍟───[ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ ]───⍟<b>
+    OWNER_TXT = """<b>⍟───[ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ ]───⍟</b>
     
-    <b>• ꜰᴜʟʟ ɴᴀᴍᴇ : ᴘⲁ₪ᴄʜᴏ</b>
-    <b>• Uꜱᴇʀ ɴᴀᴍᴇ : @iampancho
-    • Usᴇʀ ɪᴅ :</b> <code>1700221515</code>
+<b>• ꜰᴜʟʟ ɴᴀᴍᴇ : ᴘⲁ₪ᴄʜᴏ</b>
+<b>• Uꜱᴇʀ ɴᴀᴍᴇ : @iampancho
+• Usᴇʀ ɪᴅ :</b> <code>1700221515</code>
     
-    <b>∂σи'т вє αfяαι∂ σf вєιиg ∂ιffєяєит, вє αfяαι∂ σf вєιиg тнє ѕαмє αѕ єνєяуσиє єℓѕє</b>
+<b>∂σи'т вє αfяαι∂ σf вєιиg ∂ιffєяєит, вє αfяαι∂ σf вєιиg тнє ѕαмє αѕ єνєяуσиє єℓѕє</b>
     """
     HELP_TXT = """𝙷𝙴𝚈 {}
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
@@ -116,9 +116,9 @@ Name - {}
 """
     SPELL_CHECK_ENG = """<i>Click on the button labeled Google, find the correct movie name and enter it here. But the movie / Tv. Web Series will get ..
     
-    If you still do not get it. Movie Name & year after @admin. Example: Add <b>@admin kala 2020</b> to the group in this way. The admin will upload within 24 hours
+If you still do not get it. Movie Name & year after @admin. Example: Add <b>@admin kala 2020</b> to the group in this way. The admin will upload within 24 hours
     
-    If you ask for a movie released in theaters, you will not get it, Movie is only available when ott Dvd is released</i>"""
+If you ask for a movie released in theaters, you will not get it, Movie is only available when ott Dvd is released</i>"""
 
     SPELL_CHECK_MAL = """<i>Google, yendex എന്ന് എഴുതിയിരിക്കുന്ന ഏതെങ്കിലും ബട്ടണിൽ ക്ലിക്ക് ചെയ്ത് ശരിയായ സിനിമയുടെ പേര് കണ്ടെത്തി ഇവിടെ നൽകുക എന്നാലേ സിനിമ / Tv . Web സീരിയസ് കിട്ടുകയുള്ളു.. 
 
