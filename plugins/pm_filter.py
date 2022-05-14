@@ -450,7 +450,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("📵 𝘾𝙤𝙣𝙩𝙖𝙘𝙩 𝙉𝙤𝙩 𝘼𝙡𝙡𝙤𝙬𝙚𝙙\n\n- Section B206 - Spam + Ban ⚠️\n\n- Section Y8R6 - Spam + Report 🉐\n\n🗽 ʙʏ ◉‿◉ ᴘⲁ₪ᴄʜᴏ", show_alert=True)
      
     elif query.data == "movieinfo":
-        await query.answer("⚠️ Information ⚠️\n\nAfter 30 minutes this message will be automatically deleted\n\nIf you do not see the requested movie / series file, look at the next page/n/n© ᴄɪɴɪᴍᴀʙʀᴀɴᴛʜᴇɴ", show_alert=True)
+        await query.answer("⚠️ Information ⚠️\n\nAfter 30 minutes this message will be automatically deleted\n\nIf you do not see the requested movie / series file, look at the next page\n\n© ᴄɪɴɪᴍᴀʙʀᴀɴᴛʜᴇɴ", show_alert=True)
 
     elif query.data == "movss":
         await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴀᴡᴀᴋᴇ ᴏʀ ᴀᴡᴀᴋᴇ 2021\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n© ᴄɪɴɪᴍᴀʙʀᴀɴᴛʜᴇɴ", show_alert=True)
