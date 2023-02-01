@@ -1,2 +1,2 @@
 Sɪᴅᴇʀ Mᴀɴ
- Fcuk
+ Fcukk
