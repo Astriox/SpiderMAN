@@ -38,6 +38,7 @@ async def start(client, message: pyrogram.types.Message):
                     temp.U_NAME, 
                     temp.B_NAME,
                 ),
+                disable_web_page_preview=True,
                 reply_markup=reply_markup
             )
         else:
@@ -50,7 +51,8 @@ async def start(client, message: pyrogram.types.Message):
                     temp.U_NAME, 
                     temp.B_NAME,
                 ),
-                reply_markup=reply_markup
+                reply_markup=reply_markup,
+                disable_web_page_preview=True
             )
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         
@@ -82,6 +84,7 @@ async def start(client, message: pyrogram.types.Message):
                 temp.U_NAME, 
                 temp.B_NAME,
             ),
+            disable_web_page_preview=True,
             reply_markup=reply_markup
         )
         return
@@ -104,6 +107,7 @@ async def start(client, message: pyrogram.types.Message):
             chat_id=message.from_user.id,
             text="<b>⚠️ ᴘʟᴇᴀsᴇ ғᴏʟʟᴏᴡ ᴛʜɪs ʀᴜʟᴇs ⚠️</b>\n\n<b>{} ആദ്യം【 <a href=https://t.me/CblinkzZ>ᴊᴏɪɴ ɢʀᴏᴜᴘ</a> 】എന്ന ബട്ടൺ ക്ലിക്ക് ചെയ്തു ഗ്രൂപ്പിൽ ജോയിൻ ചെയ്.. എന്നിട്ട് വീണ്ടു ബോട്ടിൽ വന്നിട്ട്【 <a href=https://t.me/GxHeisenBot>ᴍᴇ ᴊᴏɪɴᴇᴅ</a> 】എന്ന ബട്ടൺ ക്ലിക്ക് ചെയ്താൽ ഫയൽ കിട്ടുന്നതായിരിക്കും</b>\n\n<b>Fɪʀsᴛ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ【 <a href=https://t.me/CblinkzZ>ᴊᴏɪɴ ɢʀᴏᴜᴘ</a> 】ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴊᴏɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ. ᴛʜᴇɴ ᴄᴏᴍᴇ ʙᴀᴄᴋ ᴛᴏ ᴛʜᴇ ʙᴏᴛ ᴄʟɪᴄᴋ ᴏɴ【 <a href=https://t.me/GxHeisenBot>ᴍᴇ ᴊᴏɪɴᴇᴅ</a> 】ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ᴛʜᴇ ғɪʟᴇ...</b>".format(message.from_user.mention),
             reply_markup=InlineKeyboardMarkup(btn),
+            disable_web_page_preview=True,
             parse_mode="markdown"
             )
         return
@@ -119,6 +123,7 @@ async def start(client, message: pyrogram.types.Message):
             photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
+            disable_web_page_preview=True,
             parse_mode='html'
         )
         return
@@ -272,6 +277,7 @@ async def start(client, message: pyrogram.types.Message):
         file_id=file_id,
         caption=f_caption,
         reply_markup=InlineKeyboardMarkup(buttons),
+        disable_web_page_preview=True,
         protect_content=True if pre == 'filep' else False,
         )
                     
