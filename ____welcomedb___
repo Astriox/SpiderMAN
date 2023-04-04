@@ -1,0 +1,15 @@
+async def get_welcome(chat_id: int) -> str:
+    text = await welcomedb.find_one({"chat_id": chat_id})
+    if not text:
+        return ""
+    return text["text"]
+
+
+async def set_welcome(chat_id: int, text: str):
+    return await welcomedb.update_one(
+        {"chat_id": chat_id}, {"$set": {"text": text}}, upsert=True
+    )
+
+
+async def del_welcome(chat_id: int):
+    return await welcomedb.delete_one({"chat_id": chat_id})
