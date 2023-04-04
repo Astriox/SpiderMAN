@@ -144,7 +144,7 @@ async def next_page(bot, query):
                 for file in files
             ]
     try:
-        if settings['auto_delete']:
+        if settings['auto_ddelete']:
             btn.insert(0, 
                 [
                     InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
@@ -165,7 +165,7 @@ async def next_page(bot, query):
         grpid = await active_connection(str(query.message.from_user.id))
         await save_group_settings(grpid, 'auto_delete', True)
         settings = await get_settings(query.message.chat.id)
-        if settings['auto_delete']:
+        if settings['auto_ddelete']:
             btn.insert(0, 
                 [
                     InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
@@ -717,9 +717,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton('Aᴜᴛᴏ-Dᴇʟᴇᴛᴇ',
-                                         callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('10 Mɪɴs' if settings["auto_delete"] else '✘ Oғғ',
-                                         callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{str(grp_id)}')
+                                         callback_data=f'setgs#auto_ddelete#{settings["auto_ddelete"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('10 Mɪɴs' if settings["auto_ddelete"] else '✘ Oғғ',
+                                         callback_data=f'setgs#auto_ddelete#{settings["auto_ddelete"]}#{str(grp_id)}')
                 ],
                 [
                     InlineKeyboardButton('Aᴜᴛᴏ-Fɪʟᴛᴇʀ',
