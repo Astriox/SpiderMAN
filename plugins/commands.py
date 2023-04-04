@@ -21,82 +21,39 @@ logger = logging.getLogger(__name__)
 BATCH_FILES = {}
 
 @Client.on_message(filters.command("start") & filters.incoming & ~filters.edited)
-async def start(client, message: pyrogram.types.Message):
-
+async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
-        buttons = [[
-            InlineKeyboardButton('ᴄʟɪᴄᴋ ʜᴇʀᴇ ꜰᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs', callback_data='help')
-           ]]
-       
+        buttons = [[InlineKeyboardButton('ᴄᴏɴᴛᴀᴄᴛ ᴏᴡɴᴇʀ', url='https://t.me/iampancho')]]
+            
         reply_markup = InlineKeyboardMarkup(buttons)
-        if not START_IMAGE_URL:
-            await message.reply(
-                script.START_TXT.format(
-                    (message.from_user.mention if 
-                    message.from_user else 
-                    message.chat.title), 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                disable_web_page_preview=True,
-                reply_markup=reply_markup
-            )
-        else:
-            await message.reply_photo(
-                photo=START_IMAGE_URL,
-                caption=script.START_TXT.format(
-                    (message.from_user.mention if 
-                    message.from_user else 
-                    message.chat.title), 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup,
-               #disable_web_page_preview=True
-            )
+        await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
-        
         if not await db.get_chat(message.chat.id):
-            link = await bot.create_chat_invite_link(chat)
             total=await client.get_chat_members_count(message.chat.id)
             await client.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, "Unknown"))       
             await db.add_chat(message.chat.id, message.chat.title)
         return 
-    
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
-    
     if len(message.command) != 2:
-
         buttons = [[
             InlineKeyboardButton('ᴄʟɪᴄᴋ ʜᴇʀᴇ ꜰᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs', callback_data='help')
            ]]
-
         reply_markup = InlineKeyboardMarkup(buttons)
-
         await message.reply_photo(
-            photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),
-            caption=script.START_TXT.format(
-                (message.from_user.mention if 
-                message.from_user else 
-                message.chat.title), 
-                temp.U_NAME, 
-                temp.B_NAME,
-            ),
-            #disable_web_page_preview=True,
-            reply_markup=reply_markup
+            photo=random.choice(PICS),
+            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode='html'
         )
         return
-
     if AUTH_CHANNEL and not await is_subscribed(client, message):
         try:
             invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
         except ChatAdminRequired:
             logger.error("Make sure Bot is admin in Forcesub channel")
             return
-        
-
         if message.command[1] != "subscribe":
             kk, file_id = message.command[1].split("_", 1)
             pre = 'checksubp' if kk == 'filep' else 'checksub' 
@@ -107,23 +64,19 @@ async def start(client, message: pyrogram.types.Message):
             chat_id=message.from_user.id,
             text="<b>⚠️ ᴘʟᴇᴀsᴇ ғᴏʟʟᴏᴡ ᴛʜɪs ʀᴜʟᴇs ⚠️</b>\n\n<b>{} ആദ്യം【 <a href=https://t.me/CblinkzZ>ᴊᴏɪɴ ɢʀᴏᴜᴘ</a> 】എന്ന ബട്ടൺ ക്ലിക്ക് ചെയ്തു ഗ്രൂപ്പിൽ ജോയിൻ ചെയ്.. എന്നിട്ട് വീണ്ടു ബോട്ടിൽ വന്നിട്ട്【 <a href=https://t.me/GxHeisenBot>ᴍᴇ ᴊᴏɪɴᴇᴅ</a> 】എന്ന ബട്ടൺ ക്ലിക്ക് ചെയ്താൽ ഫയൽ കിട്ടുന്നതായിരിക്കും</b>\n\n<b>Fɪʀsᴛ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ【 <a href=https://t.me/CblinkzZ>ᴊᴏɪɴ ɢʀᴏᴜᴘ</a> 】ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴊᴏɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ. ᴛʜᴇɴ ᴄᴏᴍᴇ ʙᴀᴄᴋ ᴛᴏ ᴛʜᴇ ʙᴏᴛ ᴄʟɪᴄᴋ ᴏɴ【 <a href=https://t.me/GxHeisenBot>ᴍᴇ ᴊᴏɪɴᴇᴅ</a> 】ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ᴛʜᴇ ғɪʟᴇ...</b>".format(message.from_user.mention),
             reply_markup=InlineKeyboardMarkup(btn),
-            disable_web_page_preview=True,
-            parse_mode="markdown"
+            parse_mode="html",
+            disable_web_page_preview=True
             )
         return
-
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
-
         buttons = [[
             InlineKeyboardButton('ᴄʟɪᴄᴋ ʜᴇʀᴇ ꜰᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs', callback_data='help')
            ]]
-        
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
-            photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),
+            photo=random.choice(PICS),
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            disable_web_page_preview=True,
             parse_mode='html'
         )
         return
