@@ -423,6 +423,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 file_id=file_id,
                 caption=f'<b>🎟 ʀᴇqᴜᴇꜱᴛᴇᴅ вч : {query.from_user.first_name}</b>\n\n<code>{title}</code>\n------------------------------------\n<b><i>This file 📁 will be deleted ❌ from this group 📍 within 2 ⏰ minutes due to copyright ©️</b></i>\n\n<b>⏩ How To Forward : [Click Here](https://t.me/TelegramTips/242)</b>',
                 protect_content=True if ident == "filep" else False,
+                disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -508,6 +509,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     temp.U_NAME, 
                     temp.B_NAME,
                 ),
+                disable_web_page_preview=True,
                 reply_markup=reply_markup
             )
         else:
@@ -518,6 +520,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     temp.U_NAME, 
                     temp.B_NAME,
                 ),
+                disable_web_page_preview=True,
                 reply_markup=reply_markup
             )
         await query.answer('Cespp')
