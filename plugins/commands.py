@@ -52,7 +52,7 @@ async def start(client, message: pyrogram.types.Message):
                     temp.B_NAME,
                 ),
                 reply_markup=reply_markup,
-                disable_web_page_preview=True
+               #disable_web_page_preview=True
             )
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         
@@ -84,7 +84,7 @@ async def start(client, message: pyrogram.types.Message):
                 temp.U_NAME, 
                 temp.B_NAME,
             ),
-            disable_web_page_preview=True,
+            #disable_web_page_preview=True,
             reply_markup=reply_markup
         )
         return
