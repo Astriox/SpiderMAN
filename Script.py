@@ -1,9 +1,15 @@
 class script(object):
-    START_TXT = """<b>Hᴇʟʟᴏ {},
-Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, I Cᴀɴ Pʀᴏᴠɪᴅᴇ Mᴏᴠɪᴇs, Jᴜsᴛ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ Aɴᴅ Eɴᴊᴏʏ 😍</b>"""
-
-    HELP_TXT = """<b>Hᴇʏ {}
-Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
+    START_TXT = """<b>Hᴇʟʟᴏ {}</b>
+    
+<b>Sᴏʀʀʏ ɪ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ</b> <b><a href=https://t.me/Cinimabranthen>Cɪɴɪᴍᴀʙʀᴀɴᴛʜᴇɴ</a></b><b> Gʀᴏᴜᴘ. Nᴏ ᴏᴛʜᴇʀ ᴄᴏᴍᴍᴀɴᴅ ᴡɪʟʟ ᴡᴏʀᴋ ᴏɴ ᴛʜɪs ʙᴏᴛ ᴇxᴄᴇᴘᴛ sᴛᴀʀᴛ. ᴅᴏɴ’ᴛ ᴡᴀsᴛᴇ ʏᴏᴜʀ ᴛɪᴍᴇ</b>"""
+    OWNER_TXT = """<b>⍟───[ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ ]───⍟</b>
+    
+<b>• ꜰᴜʟʟ ɴᴀᴍᴇ : ᴘⲁ₪ᴄʜᴏ</b>
+<b>• Uꜱᴇʀ ɴᴀᴍᴇ : @iampancho
+• Usᴇʀ ɪᴅ :</b> <code>1700221515</code>
+    
+<b>∂σи'т вє αfяαι∂ σf вєιиg ∂ιffєяєит, вє αfяαι∂ σf вєιиg тнє ѕαмє αѕ єνєяуσиє єℓѕє</b>
+    """
 
     ABOUT_TXT = """<b>✯ Mʏ Nᴀᴍᴇ: {}
 ✯ Cʀᴇᴀᴛᴏʀ: <a href='https://t.me/DQ_The_File_Donor_Updates'>Jᴏᴇʟ Kᴜʀɪᴀɴ Bɪᴊᴜ</a>
